@@ -1,0 +1,65 @@
+<div class="edit-employee">
+  <form [formGroup]="editedDetails" (ngSubmit)="saveEmployeeDetails()">
+    <div class="input-fields-container">
+      <div class="input-field">
+        <img class="input-field-image" src="../../assets/name-img.png" />
+        <input
+          class="input"
+          type="text"
+          formControlName="name"
+          placeholder="Employee name"
+          required
+        />
+      </div>
+
+      <div class="input-field">
+        <img class="input-field-image" src="../../assets/role-img.png" />
+        <select formControlName="role" class="input" required>
+          <option value="PD">Product Designer</option>
+          <option value="FD">Flutter Developer</option>
+          <option value="QT">QA Tester</option>
+          <option value="PO">Product Owner</option>
+        </select>
+      </div>
+
+      <div class="date-fields">
+        <div class="input-field">
+          <img class="input-field-image" src="../../assets/date-icon.png" />
+          <input
+            formControlName="startDate"
+            class="input start-date"
+            type="input"
+            placeholder="Today"
+            onfocus="(this.type='date')"
+            required
+          />
+        </div>
+        <img class="date-arrow-icon" src="../../assets/date-arrow-right.png" />
+        <div class="input-field">
+          <img class="input-field-image" src="../../assets/date-icon.png" />
+          <input
+            formControlName="endDate"
+            class="input end-date"
+            type="input"
+            placeholder="No date"
+            onfocus="(this.type='date')"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="edit-employee__button-container">
+      <div class="edit-employee__buttons">
+        <button
+          routerLink="/"
+          type="cancel"
+          class="btn btn-outline-primary cancel"
+        >
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-primary save">Save</button>
+      </div>
+    </div>
+  </form>
+</div>

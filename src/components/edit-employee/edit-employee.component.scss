@@ -1,0 +1,99 @@
+.edit-employee {
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 16px;
+
+        .btn {
+            border: none;
+            min-width: 73px;
+            min-height: 40px;
+            margin-left: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: 'Roboto';
+        }
+
+        .cancel {
+            background-color: #EDF8FF;
+            margin-right: 16px;
+            padding: 12px 0;
+        }
+
+        .save {
+            background-color: #1DA1F2;
+            padding: 12px 0;
+        }
+    }
+
+    &__button-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        border-top: 2px solid #F2F2F2;
+    }
+
+    .input-fields-container {
+        margin: 16px;
+
+        .input-field {
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            margin-bottom: 23px;
+            border: 1px solid #E5E5E5;
+            border-radius: 4px;
+            padding: 8px;
+            
+
+            &-image {
+                width: 24px;
+                height: 24px;
+            }
+
+            .input {
+                border: none;
+                margin-left: 10px;
+                font-size: 16px;
+                font-weight: 400;
+                font-family: 'Roboto';
+                color: #949C9E;
+                width: -webkit-fill-available;
+            }
+
+            input:focus{
+                outline: none;
+            }
+        }
+
+        .date-fields {
+            display: flex;
+            align-items: center;
+
+            .start-date {
+                max-width: 100px;
+            }
+
+            .end-date {
+                max-width: 100px;
+            }
+
+            .input-field {
+                margin-bottom: 0;
+            }
+
+            input[type="date"]::-webkit-inner-spin-button,
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+            }
+
+            .date-arrow-icon {
+                width: 20px;
+                height: 20px;
+                margin: 0 5px;
+            }
+        }
+    }
+}

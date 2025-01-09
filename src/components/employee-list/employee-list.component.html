@@ -1,0 +1,56 @@
+<div class="employee-list">
+  <div *ngIf="allEmployees.length < 1" class="employee-list__no-employees">
+    <img
+      class="employee-list__no-employees-image"
+      src="../../assets/no-employees-found.svg"
+    />
+  </div>
+  <div 
+    *ngIf="allEmployees.length > 0" 
+    class="employee-list__employees"
+  >
+    <div *ngIf="currentEmployees.length > 0" class="current-employees">
+      <div class="employee-list__header">
+        Current employees
+      </div>
+      <div *ngFor="let employee of currentEmployees" class="employee__list">
+        <div class="employee-list__item">
+          <div class="employee__list__name">{{ employee.name }}</div>
+          <div class="employee__list__role">{{ employee.role }}</div>
+          <div class="employee__list__date">From {{ employee.startDate }}</div>
+        </div>
+        <div class="employee-list__actions">
+          <img (click)="editEmployee(employee)" class="employee-list__actions-edit" src="../../assets/edit.svg">
+          <img (click)="deleteEmployee(employee)" class="employee-list__actions-delete" src="../../assets/delete.svg">
+        </div>
+      </div>
+    </div>
+    <div *ngIf="pastEmployees.length > 0" class="past-employees">
+      <div class="employee-list__header">
+        Previous employees
+      </div>
+      <div *ngFor="let employee of pastEmployees" class="employee__list">
+        <div class="employee-list__item">
+          <div class="employee__list__name">{{ employee.name }}</div>
+          <div class="employee__list__role">{{ employee.role }}</div>
+          <div class="employee__list__date">{{ employee.startDate }} - {{ employee.endDate }}</div>
+        </div>
+        <div class="employee-list__actions">
+          <img (click)="editEmployee(employee)" class="employee-list__actions-edit" src="../../assets/edit.svg">
+          <img (click)="deleteEmployee(employee)" class="employee-list__actions-delete" src="../../assets/delete.svg">
+        </div>
+      </div>
+    </div>
+
+    <div class="swipe-info">Swipe left to delete</div>
+  </div>
+  <div class="employee-list__add-button">
+    <button
+      routerLink="/add-employee"
+      type="button"
+      class="btn btn-primary add-employee"
+    >
+      +
+    </button>
+  </div>
+</div>
