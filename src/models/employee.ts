@@ -1,7 +1,7 @@
 export interface Employee {
     employeeId: string;
     name: string;
-    role: Roles;
+    role: string;
     startDate: string;
     endDate?: string;
 }

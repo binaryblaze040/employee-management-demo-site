@@ -17,7 +17,7 @@ export class EditEmployeeComponent implements OnInit {
     this.employeeToEdit = {
       employeeId: "",
       name: "",
-      role: Roles.FD,
+      role: "",
       startDate: "",
       endDate: ""
     };

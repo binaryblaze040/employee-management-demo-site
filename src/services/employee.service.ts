@@ -61,9 +61,6 @@ export class EmployeeService {
         return currEmpl;
       }
     });
-    
-
-    console.log(this.allEmployees);
 
     this.router.navigate(['/']);
   }
